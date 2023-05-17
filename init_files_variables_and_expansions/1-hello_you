@@ -1,0 +1,3 @@
+#!/bin/bash
+VAR1="user"
+echo "hello $VAR1"
