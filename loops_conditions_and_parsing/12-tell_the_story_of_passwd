@@ -1,7 +1,17 @@
 #!/usr/bin/env bash
+<<<<<<< HEAD
 #This script displays content of file /etc/passwd
 IFS=":"
 while read -r   
 do
 	echo "The user USERNAME is part of the GROUP_ID gang, lives in HOME_DIRECTORY and rides COMMAND/SHELL. USER ID's place is protected by the passcode PASSWORD, more info about the user here: USER ID INFO"
 done < /etc/passwd
+=======
+#This is a script that displays the content of the file /etc/passwd
+
+IFS=":"
+while read -r USRN GRPID HMDIR LOG USRID PD USRIDINFO
+do
+	echo "The user $USRN is part of the $GRPID gang, lives in $HMDIR and rides $LOG. $USRID place is protected by the passcode $PD, more info about the user here: $USRIDINFO"
+done < /etc/passwd	
+>>>>>>> 832994f5078a00c0641620e72c8f8e77176618b6
