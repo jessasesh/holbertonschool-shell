@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#This is a script that displays and groups visitors by IP & HTTP status codes
+
