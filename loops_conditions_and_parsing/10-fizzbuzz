@@ -5,13 +5,13 @@ j=1
 
 for (( j=1; j<100; j++))
 do
-	if (( j % 3 = 0 && j % 5 = 0 ))
+	if (( j % 3 == 0 && j % 5 == 0 ))
 	then 
 		echo "FizzBuzz"
-	elif (( j % 3 = 0 ))
+	elif (( j % 3 == 0 ))
 	then
 		echo "Fizz"
-	elif (( j % 5 = 0 ))
+	elif (( j % 5 == 0 ))
 	then
 		echo "Buzz"
 	else
