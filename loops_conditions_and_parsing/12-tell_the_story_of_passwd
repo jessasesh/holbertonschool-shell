@@ -1,7 +1,7 @@
-#!/ust/bin/env bash
+#!/usr/bin/env bash
 #This is a script that displays the content of the file /etc/passwd
 
-IFS= ":"
+IFS=":"
 while read -r USRN GRPID HMDIR LOG USRID PD USRIDINFO
 do
 	echo "The user $USRN is part of the $GRPID gang, lives in $HMDIR and rides $LOG. $USRID place is protected by the passcode $PD, more info about the user here: $USRIDINFO"
