@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#This script gives you info about school file
 sfile=school
 if [ "$sfile" ]
 then
