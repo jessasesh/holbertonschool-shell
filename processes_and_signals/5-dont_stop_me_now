@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-#This is a script that stops file '4-to_infinity_and_beyond'
-kill $(pgrep 4-to_infinity_and_beyond)
+kill -SIGTERM $(pgrep 4-to_infinity_and_beyond)
