@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#This is a script that displays a list of currently running processes for all users, in a user-oriented format, and shows the process hierarchy
+ps u -H
