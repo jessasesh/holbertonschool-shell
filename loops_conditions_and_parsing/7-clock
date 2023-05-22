@@ -3,7 +3,6 @@
 
 j=0
 h=0
-m=0
 while [ $j -le 779 ]
 do
     if(( j % 60 == 0 ))
