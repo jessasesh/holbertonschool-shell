@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #This is a script that creates file and displays certain text; also the file that has been created will be deleted and terminates itself when receiving certain signals
-echo "$$" > /var/run/holbertonscript.pid
-trap "echo 'I hate the kill command'; exit" SIGTERM
-trap "echo 'Y U no love me?!'" SIGINT
-trap "rm /var/run/holbertonscript.pid; exit" SIGQUIT
-while
+echo $$ > /var/run/holbertonscript.pid
+trap "echo I hate the kill command; rm -rf /var/run/holbertonscript.pid; exit" SIGTERM
+trap "echo Y U no love me?!" SIGINT
+trap "rm -rf /var/run/holbertonscript.pid; exit" SIGQUIT
+while :
 do
     echo "To infinity and beyond"
     sleep 2
