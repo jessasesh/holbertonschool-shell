@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 #This a script
-case "$1" in
-    start)
+case $1 in
+    "start")
 	./manage_my_process &
 	echo "$!" > /var/run/my_process.pid
 	echo "manage_my_process started"
 	;;
-    stop)
-	sudo kill -15 "$(cat /var/run/my_process.pid)"
-	rm -f /var/run/my_process.pid
+    "stop")
+	pkill -f ./manage_my_process
+        rm /var/run/my_process.pid
 	echo "manage_my_process stopped"
 	;;
-    restart)
-	sudo kill -15 "$(cat /var/run/my_process.pid)"
-	rm -f /var/run/my_process.pid
+    "restart")
+	pkill -f ./manage_my_process
+	rm /var/run/my_process.pid
 	./manage_my_process &
 	echo "$!" > /var/run/my_process.pid
 	echo "manage_my_process restarted"
@@ -22,4 +22,3 @@ case "$1" in
 	echo "Usage: manage_my_process {start|stop|restart}"
 	;;
 esac
-exit 0
