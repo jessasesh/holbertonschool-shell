@@ -1,15 +1,32 @@
 #!/usr/bin/env bash
 #This is a script that creates file and displays certain text; also the file that has been created will be deleted and terminates itself when receiving certain signals
-function love() {
-    rm /var/run/holbertonscript.pid
-    exit
+sudo touch /var/run/holbertonscript.pid
+sudo bash -c "echo $$ > /var/run/holbertonscript.pid"
+
+trap interrup2 SIGINT
+trap interrup1 SIGTERM
+trap interrup3 SIGQUIT
+
+interrup3()
+{
+    sudo rm /var/run/holbertonscript.pid
+    exit $?
 }
 
-trap "echo I hate the kill command;love" SIGTERM
-trap "echo Y U no love me?!;love" SIGINT
+interrup2()
+{
+    echo "Y U no love me?!"
+}
 
-echo $$ >> /var/run/holbertonscript.pid
-while true 
+interrup1()
+{
+    echo "I hate the kill command"
+    sudo rm /var/run/holbertonscript.pid
+    exit $?
+}
+
+while true
 do
-    echo To infinity and beyond;
+    echo "To infinity and beyond"
+    sleep 2
 done
